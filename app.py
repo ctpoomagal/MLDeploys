@@ -61,5 +61,5 @@ def predict():
 print("Prediction endpoint '/predict' defined.")
 
 if __name__ == "__main__":
-  Print("Starting prediction API with Preprocessing and model Inference......")
+  print("Starting prediction API with Preprocessing and model Inference......")
   app.run(debug=True)
