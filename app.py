@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import request, jsonify, Flask
 import pandas as pd # Import pandas to convert input to DataFrame
 import joblib
 app = Flask(__name__)
