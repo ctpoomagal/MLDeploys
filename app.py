@@ -1,4 +1,4 @@
-from flask import request, jsonify, Flask
+from flask import request, jsonify, Flask, render_template
 import pandas as pd # Import pandas to convert input to DataFrame
 import joblib
 import os
@@ -16,6 +16,11 @@ print(f"Logistic Regression model loaded from {model_filename}")
 # Load the fitted StandardScaler
 scaler = joblib.load(scaler_filename)
 print(f"StandardScaler loaded from {scaler_filename}")
+
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('index.html')  # For frontend
+    
 # Define the prediction endpoint
 @app.route('/predict', methods=['POST'])
 def predict():
