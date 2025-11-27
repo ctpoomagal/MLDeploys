@@ -1,6 +1,7 @@
 from flask import request, jsonify, Flask
 import pandas as pd # Import pandas to convert input to DataFrame
 import joblib
+import os
 app = Flask(__name__)
 
 
@@ -61,5 +62,6 @@ def predict():
 print("Prediction endpoint '/predict' defined.")
 
 if __name__ == "__main__":
-  print("Starting prediction API with Preprocessing and model Inference......")
-  app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    print("Starting prediction API with Preprocessing and Model Inference...")
+    app.run(host="0.0.0.0", port=port)
